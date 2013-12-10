@@ -1,4 +1,32 @@
-# holman does dotfiles
+# pierre sometimes does dotfiles too
+
+## TODO
+
+... to have the perfect setup! (for now)
+
+* [ ] make `script/install` work with interactive questions
+* [ ] Install / configure awesome ?
+* [ ] Install ST3
+* [ ] Install [NodeJS](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint-elementary-os)
+* [ ] Install Elixir
+* [ ] Install PHPBrew
+* [ ] Install z
+* [ ] Install tig
+* [ ] Find a way to store Github credentials in `.gitconfig` (maybe `localrc` as seen in `zsh/zshrc.symlink`?):
+```
+[github]
+        user = real34
+        token = xxxxxx
+```
+* [ ] Find out which things should get added to the path and review all `path.zsh` files
+* [ ] Install Skype or equivalent
+* [ ] Install Dropbox automatically `cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -`
+* [ ] Symlink `.dotfiles` from Dropbox on install
+* [ ] Symlink SSH keys from Dropbox `ln -s ~/Dropbox/xxx/_.ssh/ .ssh && chmod -R 700 ~/.ssh/`
+* [ ] Find which default system settings should be set (Ubuntu), and add again a `bin/set_defaults`
+* [ ] Find a way to automatically add PPAs to install specific stuff
+* [ ] Improve the `zsh/install.sh` with a check on the current shell
+* [ ] Improve the `vim/vimrc.symlink` with awesomeness from awesome guys
 
 ## dotfiles
 
