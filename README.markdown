@@ -9,7 +9,7 @@
 * [ ] Install ST3
 * [ ] Install [NodeJS](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint-elementary-os)
 * [ ] Install Elixir
-* [ ] Install PHPBrew
+* [ ] Install PHPBrew + Composer
 * [ ] Install z
 * [ ] Install tig
 * [ ] Find a way to store Github credentials in `.gitconfig` (maybe `localrc` as seen in `zsh/zshrc.symlink`?):
