@@ -21,6 +21,7 @@
 ```
 * [ ] Find out which things should get added to the path and review all `path.zsh` files
 * [ ] Install Skype or equivalent
+* [ ] Install MailCatcher
 * [ ] Install Dropbox automatically `cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -`
 * [ ] Symlink `.dotfiles` from Dropbox on install
 * [ ] Symlink SSH keys from Dropbox `ln -s ~/Dropbox/xxx/_.ssh/ .ssh && chmod -R 700 ~/.ssh/`
