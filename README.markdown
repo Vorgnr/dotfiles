@@ -8,6 +8,7 @@
 * [ ] Install / configure awesome ?
 * [ ] Install ST3
 * [ ] Install [NodeJS](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint-elementary-os)
+* [ ] Install theme OhMyZsh
 * [ ] Install Elixir
 * [ ] Install PHPBrew + Composer
 * [ ] Install z
