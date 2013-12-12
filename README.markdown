@@ -4,7 +4,7 @@
 
 ... to have the perfect setup! (for now)
 
-* [ ] make `script/install` work with interactive questions
+* [ ] make `script/install` work with interactive questions (add "command < /dev/tty")
 * [ ] Install / configure awesome ?
 * [ ] Install ST3
 * [ ] Install [NodeJS](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint-elementary-os)
