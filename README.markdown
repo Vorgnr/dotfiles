@@ -12,7 +12,7 @@
 * [ ] Install Elixir
 * [ ] Install PHPBrew + Composer
 * [ ] Install z
-* [ ] Install tig
+* [ ] Install tig (see the .tigrc: https://gist.github.com/chadrien/7924924)
 * [ ] Find a way to store Github credentials in `.gitconfig` (maybe `localrc` as seen in `zsh/zshrc.symlink`?):
 ```
 [github]
