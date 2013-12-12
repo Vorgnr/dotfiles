@@ -10,6 +10,5 @@ if test ! $(which ruby-build)
 then
   echo "  Installing ruby-build for you."
   git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-else
-  cd ~/.rbenv/plugins/ruby-build && git pull
 fi
+cd ~/.rbenv/plugins/ruby-build && git pull && sudo ./install.sh
