@@ -13,4 +13,7 @@
 sudo apt-get update
 
 # Install packages
-$DOTFILES_ROOT/ubuntu/setup.sh 2>&1
+$ZSH/ubuntu/setup.sh 2>&1
+
+# Remove useless
+sudo apt-get autoremove

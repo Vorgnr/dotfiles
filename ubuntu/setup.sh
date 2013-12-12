@@ -17,12 +17,12 @@ fi
 
 # Install packages from repositories
 TO_INSTALL=(
-    'ack-grep'
+	'ack-grep'
 	'curl'
-    'grc'
+	'grc'
 	'vim'
-    'xclip'
-    'zsh'
+	'xclip'
+	'zsh'
 	'php5'
 	'mysql-server'
 	'apache2'
@@ -47,8 +47,12 @@ sudo apt-get install $INSTALL_COMMAND
 # Install DEB packages
 TO_FETCH=(
 	'https://download.toggl.com/toggldesktop/latest/toggl-desktop_current_amd64.deb'
-	'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
 )
+if test ! $(which google-chrome)
+then
+	TO_FETCH[1]='https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+fi
+
 mkdir -p ${FETCH_DESTINATION_DIR}
 rm ${FETCH_DESTINATION_DIR}/*.deb
 for DEB_URL in ${TO_FETCH[@]}
