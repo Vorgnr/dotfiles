@@ -1,0 +1,1 @@
+export PATH="$PATH:$ZSH/elixir/sources/bin"
