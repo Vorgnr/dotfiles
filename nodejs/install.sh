@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if test ! $(which node)
+then
+  # See https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint-elementary-os
+  echo "  Installing nodejs for you."
+  sudo apt-get update
+  sudo apt-get install -y python-software-properties python g++ make
+  sudo add-apt-repository -y ppa:chris-lea/node.js
+  sudo apt-get update
+  sudo apt-get install nodejs
+fi
+
+npm config set registry http://registry.npmjs.eu/
+
+if test ! $(which grunt)
+then
+  echo "  Installing grunt-cli for you."
+  sudo npm install -g grunt-cli
+fi
+
+if test ! $(which bower)
+then
+  echo "  Installing bower for you."
+  sudo npm install -g bower
+fi
