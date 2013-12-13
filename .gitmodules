@@ -4,3 +4,6 @@
 [submodule "z/z"]
 	path = z/z
 	url = https://github.com/rupa/z.git
+[submodule "system/fonts.symlink/powerline-fonts"]
+	path = system/fonts.symlink/powerline-fonts
+	url = git@github.com:Lokaltog/powerline-fonts.git
