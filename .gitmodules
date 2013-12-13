@@ -1,3 +1,6 @@
 [submodule "awesome/config/themes/awesome-solarized"]
 	path = awesome/config/themes/awesome-solarized
 	url = https://github.com/cycojesus/awesome-solarized.git
+[submodule "z/z"]
+	path = z/z
+	url = https://github.com/rupa/z.git
