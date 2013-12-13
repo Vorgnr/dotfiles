@@ -19,6 +19,7 @@ fi
 TO_INSTALL=(
 	'ack-grep'
 	'curl'
+	'dmenu'
 	'grc'
 	'htop'
 	'vim'
