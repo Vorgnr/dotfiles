@@ -20,6 +20,7 @@ TO_INSTALL=(
 	'ack-grep'
 	'curl'
 	'grc'
+	'htop'
 	'vim'
 	'xclip'
 	'zsh'
