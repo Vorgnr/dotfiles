@@ -47,6 +47,7 @@ need_push () {
   fi
 }
 
+# Ruby
 ruby_version() {
   if (( $+commands[rbenv] ))
   then
@@ -68,11 +69,25 @@ rb_prompt() {
   fi
 }
 
+# PHP
+php_version() {
+  php -r "echo PHP_VERSION;"
+}
+
+php_prompt() {
+  if ! [[ -z "$(php_version)" ]]
+  then
+    echo "%{$fg_bold[yellow]%}$(php_version)%{$reset_color%} "
+  else
+    echo ""
+  fi
+}
+
 directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(php_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }

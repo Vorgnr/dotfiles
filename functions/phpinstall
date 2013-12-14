@@ -1,0 +1,13 @@
+# Allows to easily install a new PHP version using phpbrew
+# with default settings
+phpinstall() {
+	local version=$1
+
+	sudo apt-get install autoconf automake curl build-essential libxslt1-dev re2c libxml2-dev php5-cli bison libbz2-dev libmcrypt-dev libreadline-dev
+	sudo apt-get build-dep php5
+
+	# [todo] - Add Apache2 support to PHPBrew (see https://github.com/c9s/phpbrew/wiki/Cookbook#apache2-support)
+	phpbrew install php-$version +default+dbs+mb -pgsql
+	phpbrew ext install xdebug
+	phpbrew ext install gd
+}
