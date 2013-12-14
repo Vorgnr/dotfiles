@@ -20,6 +20,7 @@ TO_INSTALL=(
 	'ack-grep'
 	'curl'
 	'dmenu'
+	'dconf-tools'
 	'grc'
 	'htop'
 	'vim'

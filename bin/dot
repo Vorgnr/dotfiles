@@ -7,13 +7,13 @@
 
 # Set Ubuntu defaults
 # TODO
-# $ZSH/osx/set-defaults.sh
+# $DOTFILES/osx/set-defaults.sh
 
 # Upgrade
 sudo apt-get update
 
 # Install packages
-$ZSH/ubuntu/setup.sh 2>&1
+$DOTFILES/ubuntu/setup.sh 2>&1
 
 # Remove useless
 sudo apt-get autoremove

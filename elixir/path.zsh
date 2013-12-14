@@ -1,1 +1,1 @@
-export PATH="$PATH:$ZSH/elixir/sources/bin"
+export PATH="$PATH:$DOTFILES/elixir/sources/bin"

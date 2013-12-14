@@ -13,7 +13,7 @@ install_remote_deb() {
 }
 
 install_elixir() {
-  local SOURCES=$ZSH/elixir/sources
+  local SOURCES=$DOTFILES/elixir/sources
 
   # [todo] - Add an option to update Elixir if it is already installed
   if test ! $(which elixir)

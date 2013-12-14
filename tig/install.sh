@@ -2,7 +2,7 @@
 # See http://jonas.nitro.dk/tig/INSTALL.html
 
 install_tig() {
-  local SOURCES=$ZSH/tig/sources
+  local SOURCES=$DOTFILES/tig/sources
 
   if test ! $(which tig)
   then

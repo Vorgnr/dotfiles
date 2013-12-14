@@ -11,5 +11,5 @@ fi
 if [ ! -h $HOME/.config/awesome ]
 then
 	echo "  Configuring awesome for you"
-	ln -s $ZSH/awesome/config $HOME/.config/awesome
+	ln -s $DOTFILES/awesome/config $HOME/.config/awesome
 fi

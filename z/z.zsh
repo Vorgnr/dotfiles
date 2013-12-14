@@ -1,1 +1,1 @@
-. $ZSH/z/z/z.sh
+. $DOTFILES/z/z/z.sh
