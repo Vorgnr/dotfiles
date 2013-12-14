@@ -6,8 +6,7 @@
 # to make sure you're on the latest and greatest.
 
 # Set Ubuntu defaults
-# TODO
-# $DOTFILES/osx/set-defaults.sh
+set-defaults
 
 # Upgrade
 sudo apt-get update
