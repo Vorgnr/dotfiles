@@ -12,7 +12,7 @@
         co = checkout
         promote = !$DOTFILES/bin/git-promote
         wtf     = !$DOTFILES/bin/git-wtf
-        rank-contributers = !$DOTFILES/bin/git-rank-contributers
+        rank-contributors = !$DOTFILES/bin/git-rank-contributors
         count   = !git shortlog -sn
 [color]
         diff = auto
@@ -24,6 +24,8 @@
         excludesfile = ~/.gitignore
         editor = vim
         filemode = false
+[apply]
+        whitespace = nowarn
 [mergetool]
         keepBackup = false
 [difftool]
