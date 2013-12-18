@@ -7,7 +7,7 @@ install_remote_deb() {
 
   wget "$URL" -O $FILE
   sudo dpkg -i $FILE
-  sudo apt-get -f install # needed in case the package has unmet dependencies
+  sudo apt-get -yf install # needed in case the package has unmet dependencies
 
   rm -f $FILE
 }

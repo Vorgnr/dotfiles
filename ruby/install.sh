@@ -3,7 +3,7 @@
 if test ! $(which rbenv)
 then
   echo "  Installing rbenv for you."
-  sudo apt-get install rbenv
+  sudo apt-get -y install rbenv
 fi
 
 if test ! $(which ruby-build)

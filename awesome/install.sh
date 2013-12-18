@@ -5,7 +5,7 @@
 if test ! $(which awesome)
 then
 	echo "  Installing awesome for you"
-	sudo apt-get install awesome awesome-extra
+	sudo apt-get -y install awesome awesome-extra
 fi
 
 if [ ! -h $HOME/.config/awesome ]

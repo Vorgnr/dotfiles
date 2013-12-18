@@ -45,7 +45,7 @@ TO_INSTALL=(
 )
 INSTALL_COMMAND=$(printf " %s" "${TO_INSTALL[@]}")
 INSTALL_COMMAND=${INSTALL_COMMAND:1}
-sudo apt-get install $INSTALL_COMMAND
+sudo apt-get -y install $INSTALL_COMMAND
 
 # Install DEB packages
 TO_FETCH=(
