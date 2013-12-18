@@ -3,6 +3,7 @@
 # bootstrap installs things.
 
 DOTFILES_ROOT="`pwd`"
+[ -n "$DOTFILES" ] && DOTFILES=$DOTFILES_ROOT
 
 set -e
 
