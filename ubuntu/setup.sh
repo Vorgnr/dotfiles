@@ -71,9 +71,9 @@ rm ${FETCH_DESTINATION_DIR}/*.deb
 
 # Other installs
 ## Hub: http://hub.github.com/
-mkdir -p ~/bin/
-curl http://hub.github.com/standalone -sLo ~/bin/hub
-chmod +x ~/bin/hub
+mkdir -p $HOME/bin/
+curl http://hub.github.com/standalone -sLo $HOME/bin/hub
+chmod +x $HOME/bin/hub
 
 # Install Autocompletion:
 # 	http://mbuttu.wordpress.com/2011/07/11/git-autocomplete-for-bash-shells/
