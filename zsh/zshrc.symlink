@@ -28,6 +28,7 @@ do
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
+autoload -U $DOTFILES/functions/*(:t)
 autoload -U compinit
 compinit
 
@@ -38,6 +39,11 @@ do
 done
 
 unset config_files
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 
 # oh-my-zsh
 ZSH=$HOME/.oh-my-zsh
