@@ -55,6 +55,10 @@ if test ! $(which google-chrome)
 then
 	TO_FETCH[1]='https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
 fi
+if test ! $(which subl)
+then
+	TO_FETCH[2]='http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3059_amd64.deb'
+fi
 
 mkdir -p ${FETCH_DESTINATION_DIR}
 rm ${FETCH_DESTINATION_DIR}/*.deb

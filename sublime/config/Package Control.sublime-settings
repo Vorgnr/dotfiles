@@ -1,0 +1,30 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"ApacheConf.tmLanguage",
+		"Behat",
+		"Behat Snippets",
+		"Bootstrap 3 Snippets",
+		"BracketHighlighter",
+		"DocBlockr",
+		"EditorConfig",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"Goto Documentation",
+		"Hayaku - tools for writing CSS faster",
+		"Jasmine",
+		"LESS",
+		"Markdown Preview",
+		"OmniMarkupPreviewer",
+		"Package Control",
+		"PlainTasks",
+		"Pomodoro",
+		"Sass",
+		"Solarized Color Scheme",
+		"Twitter Bootstrap Snippets",
+		"Xdebug Client"
+	]
+}

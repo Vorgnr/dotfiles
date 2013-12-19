@@ -1,0 +1,97 @@
+[
+	{ "keys": ["ctrl+o"], "command": "fuzzy_start_from_file" },
+     { "keys": ["ctrl+shift+o"], "command": "fuzzy_bookmarks_load" },
+
+     { "keys": ["ctrl+shift+r"], "command": "goto_symbol_in_project" },
+
+ 	{"keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+    	{ "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
+
+    	{ "keys": ["f2"], "command": "side_bar_rename" },
+    	{ "keys": ["f1"], "command": "goto_documentation" },
+
+    	{ "keys": ["ctrl+v"], "command": "paste_and_indent" },
+	{ "keys": ["ctrl+shift+v"], "command": "paste" },
+
+	{ "keys": ["ctrl+u"], "command": "soft_undo" },
+
+	{ "keys": ["alt+shift+p"], "command": "pomodoro", "args": {"workingMins": 25, "restingMins": 5} },
+
+     // Override the scroll o fix Emmet override / see http://stackoverflow.com/questions/14286259/scroll-using-the-keyboard
+    { "keys": ["alt+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
+    { "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
+    { "keys": ["f12"], "command": "goto_definition" },
+
+     {
+    	"keys": ["alt+shift+6"],
+    	"command": "set_layout",
+    	"args":
+    	{
+    		"cols": [0.0, 0.5, 1.0],
+    		"rows": [0.0, 0.7, 1.0],
+    		"cells":
+    		[
+	    	          [0, 0, 1, 2],
+                     [1, 0, 2, 1], [1, 1, 2, 2]
+    		]
+    	}
+    },
+
+	// Select text between brackets
+	{
+		"keys": ["ctrl+alt+super+s"],
+		"command": "bh_key",
+		"args":
+		{
+			"lines" : true,
+			"plugin":
+			{
+				"type": ["__all__"],
+				"command": "bh_modules.bracketselect"
+			}
+		}
+	},
+	// Select tag name of HTML/XML tag (both opening name and closing)
+	{
+		"keys": ["ctrl+alt+super+t"],
+		"command": "bh_key",
+		"args":
+		{
+			"plugin":
+			{
+				"type": ["cfml", "html", "angle"],
+				"command": "bh_modules.tagnameselect"
+			}
+		}
+	},
+	// Convert single quote string to double quoted string and vice versa
+	// Will handle escaping or unescaping quotes within the string
+	{
+		"keys": ["ctrl+alt+super+q"],
+		"command": "bh_key",
+		"args":
+		{
+			"lines" : true,
+			"plugin":
+			{
+				"type": ["single_quote", "double_quote", "py_single_quote", "py_double_quote"],
+				"command": "bh_modules.swapquotes"
+			}
+		}
+	},
+	// Swap brackets with another type
+	{
+		"keys": ["ctrl+alt+super+e"],
+		"command": "swap_brackets"
+	},
+	// Surround selection with brackets from quick panel
+	{
+		"keys": ["ctrl+alt+super+w"],
+		"command": "wrap_brackets"
+	},
+	// Toggle high visibility mode
+	{
+		"keys": ["ctrl+alt+super+v"],
+		"command": "bh_toggle_high_visibility"
+	}
+]
