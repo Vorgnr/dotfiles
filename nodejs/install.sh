@@ -24,3 +24,9 @@ then
   echo "  Installing bower for you."
   sudo npm install -g bower
 fi
+
+if test ! $(which lessc)
+then
+  echo "  Installing less for you."
+  sudo npm install -g less
+fi
