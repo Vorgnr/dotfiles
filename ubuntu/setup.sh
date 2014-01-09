@@ -40,6 +40,7 @@ TO_INSTALL=(
 	'shutter'
 	'filezilla'
 	'meld'
+	'pandoc'
 	'poedit'
 	'kcachegrind'
 )

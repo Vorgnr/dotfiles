@@ -30,3 +30,9 @@ then
   echo "  Installing less for you."
   sudo npm install -g less
 fi
+
+if test ! $(which jasmine-node)
+then
+  echo "  Installing Jasmine for you."
+  sudo npm install -g jasmine-node
+fi
