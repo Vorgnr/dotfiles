@@ -15,6 +15,11 @@ then
   exit 1
 fi
 
+# http://doc.ubuntu-fr.org/java
+sudo add-apt-repository -y ppa:webupd8team/java
+sudo apt-get -y update
+sudo apt-get install oracle-java7-installer
+
 # Install packages from repositories
 TO_INSTALL=(
 	'ack-grep'
