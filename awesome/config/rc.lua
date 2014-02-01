@@ -10,8 +10,9 @@ require("naughty")
 -- Load Debian menu entries
 require("debian.menu")
 
--- Widgets
-vicious = require("vicious")
+--Load widgets
+require("precious.sound")
+require("precious.battery")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -38,21 +39,6 @@ do
 end
 -- }}}
 
--- {{{ System initialization
--- http://askubuntu.com/questions/57264/how-can-i-define-startup-applications-with-the-awesome-window-manager
-do
-  local cmds =
-  {
-    'gnome-settings-daemon &',
-    'nm-applet &'
---	'xrandr --output VGA1 --left-of HDMI1 --rotate right',
---	'xrandr --output HDMI1 --pos 1050x285 --mode 1920x1080',
-  }
-  for _,i in pairs(cmds) do
-   awful.util.spawn(i)
-  end
-end
-
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init(awful.util.getdir("config") .. "/themes/awesome-solarized/dark/theme.lua")
@@ -72,37 +58,30 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
-    awful.layout.suit.spiral, -- 1
-    awful.layout.suit.spiral.dwindle, -- 2
-    awful.layout.suit.tile, -- 3
-    awful.layout.suit.tile.left, -- 4
-    awful.layout.suit.tile.bottom, -- 5
-    awful.layout.suit.tile.top, -- 6
-    awful.layout.suit.fair, -- 7
-    awful.layout.suit.fair.horizontal, -- 8
-    awful.layout.suit.floating, -- 9
-    awful.layout.suit.max, -- 10
-    awful.layout.suit.max.fullscreen, -- 11
-    awful.layout.suit.magnifier -- 12
+    awful.layout.suit.floating,
+    awful.layout.suit.tile,
+    awful.layout.suit.tile.left,
+    awful.layout.suit.tile.bottom,
+    awful.layout.suit.tile.top,
+    awful.layout.suit.fair,
+    awful.layout.suit.fair.horizontal,
+    awful.layout.suit.spiral,
+    awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.max,
+    awful.layout.suit.max.fullscreen,
+    awful.layout.suit.magnifier
 }
 -- }}}
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = {}
-tags[1] = awful.tag(
-  { "shells", "code", "doc", 4, 5, 6, 7, "mails", "zik" },
-  1,
-  { layouts[3], layouts[11], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1]}
-)
-tags[2] = awful.tag(
-  { "IM", "work", "work2", 4, 5, 6, 7, 8, 9 },
-  2,
-  { layouts[5], layouts[5], layouts[5], layouts[1], layouts[1], layouts[12], layouts[1], layouts[1], layouts[1]}
-)
-for s = 3, screen.count() do
+tags = {
+  names = { "zsh", "web", "dev", "me", "sec" },
+  layout = { layouts[2], layouts[1], layouts[2], layouts[2], layouts[2] }
+}
+for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag(tags.names, s, tags.layout)
 end
 -- }}}
 
@@ -126,19 +105,9 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
-
--- Custom widgets
--- Date widget
-mytextclock = widget({ type = "textbox" })
-vicious.register(mytextclock, vicious.widgets.date, "%A %b %d, %R", 60)
-
--- Memory Usage widgets
-mymemwidget = widget({ type = "textbox" })
-vicious.register(mymemwidget, vicious.widgets.mem, "Mem $1% ($2MB) - ", 13)
-
-mycpuwidget = widget({ type = "textbox" })
-vicious.register(mycpuwidget, vicious.widgets.cpu, "CPU $1% - ")
-------------
+-- Create a textclock widget
+os.setlocale("fr_FR.UTF-8")
+mytextclock = awful.widget.textclock({ align = "right" }, " %a %d %b  %H:%M ")
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -219,9 +188,9 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        mymemwidget,
-        mycpuwidget,
-        s == 2 and mysystray or nil,
+        s == 1 and mysystray or nil,
+  tb_volume,
+  batinfo,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
@@ -284,15 +253,8 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-    -- Sound
-    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -c 0 set Master 2+ unmute") end),
-    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -c 0 set Master 2-") end),
-
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
-    awful.key({modkey }, "p", function()
-      awful.util.spawn_with_shell( "exe=`dmenu_path | dmenu -b -nf '#888888' -nb '#222222' -sf '#ffffff' -sb '#285577'` && exec $exe")
-    end),
 
     awful.key({ modkey }, "x",
               function ()
@@ -380,7 +342,6 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
-                     size_hints_honor = false, -- http://awesome.naquadah.org/wiki/FAQ#How_to_remove_gaps_between_windows.3F
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
@@ -388,14 +349,9 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-
-    -- Set Empathy and Toggl to always map on tags number 1 of screen 1.
-    { rule = { class = "Contact List" }, properties = { tag = tags[2][1] } },
-    { rule = { class = "Empathy" }, properties = { tag = tags[2][1] } },
-    { rule = { class = "Toggl" }, properties = { tag = tags[2][1] } },
-
-    { rule = { class = "Chromium" }, properties = { tag = tags[2][3] } },
-    { rule = { class = "Sublime Text" }, properties = { tag = tags[1][2] } }
+    -- Set Firefox to always map on tags number 2 of screen 1.
+    -- { rule = { class = "Firefox" },
+    --   properties = { tag = tags[1][2] } },
 }
 -- }}}
 
@@ -430,20 +386,5 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- {{{ Startup applications
--- http://askubuntu.com/questions/57264/how-can-i-define-startup-applications-with-the-awesome-window-manager
-do
-  local cmds =
-  {
-    "dropbox start",
-    "google-chrome",
-    "sublime_text",
-    "toggl-desktop",
-    "empathy",
-    terminal
-  }
-
-  for _,i in pairs(cmds) do
-   awful.util.spawn(i)
-  end
-end
+awful.util.spawn_with_shell("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1")
+awful.util.spawn_with_shell("run_once nm-applet")

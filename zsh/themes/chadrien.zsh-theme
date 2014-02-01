@@ -154,10 +154,6 @@ status_segment() {
   [[ -n "$symbols" ]] && $1 red white "$symbols"
 }
 
-php_segment() {
-  $1 blue black "PHP: $(php -r "echo PHP_VERSION;")"
-}
-
 build_prompt() {
   RETVAL=$?
 
@@ -175,7 +171,7 @@ build_rprompt() {
 
   local right_prompt
 
-  right_prompt=(php date status)
+  right_prompt=(date status)
 
   foreach plugin ($right_prompt)  "$plugin"_segment 'rsegment_display'; end;
 }

@@ -63,10 +63,10 @@ install_phpbrew() {
     chmod +x phpbrew.bin > /dev/null
     sudo mv phpbrew.bin /usr/bin/phpbrew > /dev/null
 
-    /usr/bin/phpbrew init > /dev/null
-    /usr/bin/phpbrew lookup-prefix ubuntu
-    /usr/bin/phpbrew install-composer
-    /usr/bin/phpbrew install-phpunit
+    # /usr/bin/phpbrew init > /dev/null
+    # /usr/bin/phpbrew lookup-prefix ubuntu
+    # /usr/bin/phpbrew install-composer
+    # /usr/bin/phpbrew install-phpunit
   fi
 }
 
