@@ -41,7 +41,6 @@ TO_INSTALL=(
 	'git-flow'
 	'bash-completion'
 	'gcolor2'
-	'gimp'
 	'shutter'
 	'filezilla'
 	'meld'
@@ -54,9 +53,6 @@ INSTALL_COMMAND=${INSTALL_COMMAND:1}
 sudo apt-get -y install $INSTALL_COMMAND
 
 # Install DEB packages
-TO_FETCH=(
-	'https://download.toggl.com/toggldesktop/latest/toggl-desktop_current_amd64.deb'
-)
 if test ! $(which google-chrome)
 then
 	TO_FETCH[1]='https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'

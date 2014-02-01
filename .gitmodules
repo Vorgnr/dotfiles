@@ -7,3 +7,6 @@
 [submodule "system/fonts.symlink/powerline-fonts"]
 	path = system/fonts.symlink/powerline-fonts
 	url = git@github.com:Lokaltog/powerline-fonts.git
+[submodule "awesome/config/precious"]
+	path = awesome/config/precious
+	url = git://rolinh.ch/precious.git
