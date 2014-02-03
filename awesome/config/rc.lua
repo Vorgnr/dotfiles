@@ -207,6 +207,7 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+	awful.key({ modkey, 		  }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
@@ -388,3 +389,4 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 
 awful.util.spawn_with_shell("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1")
 awful.util.spawn_with_shell("run_once nm-applet")
+awful.util.spawn_with_shell("run_once xscreensaver -nosplash")
