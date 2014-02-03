@@ -3,31 +3,21 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
-		"ApacheConf.tmLanguage",
-		"Behat",
-		"Behat Snippets",
 		"Bootstrap 3 Snippets",
 		"BracketHighlighter",
 		"DocBlockr",
 		"EditorConfig",
-		"Elixir",
 		"Emmet",
 		"Git",
-		"GitGutter",
 		"Goto Documentation",
-		"Hayaku - tools for writing CSS faster",
-		"Jasmine",
 		"LESS",
-		"LiveStyle",
 		"Markdown Preview",
 		"OmniMarkupPreviewer",
 		"Package Control",
 		"PlainTasks",
-		"Pomodoro",
 		"Sass",
 		"SideBarEnhancements",
 		"Solarized Color Scheme",
-		"Twitter Bootstrap Snippets",
-		"Xdebug Client"
+		"Twitter Bootstrap Snippets"
 	]
 }

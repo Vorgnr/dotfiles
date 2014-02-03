@@ -1,26 +1,28 @@
 [
+	{ "keys": ["ctrl+shift+!"], "command": "exit" },
+	{ "keys": ["ctrl+q"], "command": "save" },
 	{ "keys": ["ctrl+o"], "command": "fuzzy_start_from_file" },
-     { "keys": ["ctrl+shift+o"], "command": "fuzzy_bookmarks_load" },
+	{ "keys": ["ctrl+shift+o"], "command": "fuzzy_bookmarks_load" },
 
-     { "keys": ["ctrl+shift+r"], "command": "goto_symbol_in_project" },
+	{ "keys": ["ctrl+shift+r"], "command": "goto_symbol_in_project" },
 
- 	{"keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
-    	{ "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
+	{"keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
 
-    	{ "keys": ["f2"], "command": "side_bar_rename" },
-    	{ "keys": ["f1"], "command": "goto_documentation" },
+	{ "keys": ["f2"], "command": "side_bar_rename" },
+	{ "keys": ["f1"], "command": "goto_documentation" },
 
-    	{ "keys": ["ctrl+v"], "command": "paste_and_indent" },
+	{ "keys": ["ctrl+v"], "command": "paste_and_indent" },
 	{ "keys": ["ctrl+shift+v"], "command": "paste" },
 
 	{ "keys": ["ctrl+u"], "command": "soft_undo" },
 
 	{ "keys": ["alt+shift+p"], "command": "pomodoro", "args": {"workingMins": 25, "restingMins": 5} },
 
-     // Override the scroll o fix Emmet override / see http://stackoverflow.com/questions/14286259/scroll-using-the-keyboard
-    { "keys": ["alt+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
-    { "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
-    { "keys": ["f12"], "command": "goto_definition" },
+	// Override the scroll o fix Emmet override / see http://stackoverflow.com/questions/14286259/scroll-using-the-keyboard
+	{ "keys": ["alt+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
+	{ "keys": ["alt+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
+	{ "keys": ["f12"], "command": "goto_definition" },
 
 	// Select text between brackets
 	{
@@ -149,8 +151,8 @@
 			"rows": [0.0, 0.5, 1.0],
 			"cells":
 			[
-				[0, 0, 1, 1], [1, 0, 2, 1],
-				[0, 1, 1, 2], [1, 1, 2, 2]
+			[0, 0, 1, 1], [1, 0, 2, 1],
+			[0, 1, 1, 2], [1, 1, 2, 2]
 			]
 		}
 	},
@@ -163,6 +165,7 @@
 	{ "keys": ["ctrl+è"], "command": "focus_group", "args": { "group": 6 } },
 	{ "keys": ["ctrl+_"], "command": "focus_group", "args": { "group": 7 } },
 	{ "keys": ["ctrl+ç"], "command": "focus_group", "args": { "group": 8 } },
+
 	{ "keys": ["ctrl+shift+&"], "command": "move_to_group", "args": { "group": 0 } },
 	{ "keys": ["ctrl+shift+é"], "command": "move_to_group", "args": { "group": 1 } },
 	{ "keys": ["ctrl+shift+\""], "command": "move_to_group", "args": { "group": 2 } },
@@ -184,5 +187,4 @@
 	{ "keys": ["alt+_"], "command": "select_by_index", "args": { "index": 7 } },
 	{ "keys": ["alt+ç"], "command": "select_by_index", "args": { "index": 8 } },
 	{ "keys": ["alt+à"], "command": "select_by_index", "args": { "index": 9 } },
-
 ]
