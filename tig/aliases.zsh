@@ -1,1 +1,0 @@
-alias tig="tig --all"

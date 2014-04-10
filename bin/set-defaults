@@ -1,2 +1,0 @@
-#!/bin/sh
-exec $DOTFILES/ubuntu/set-defaults.sh

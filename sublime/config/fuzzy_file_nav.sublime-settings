@@ -1,9 +1,0 @@
-{
-	"bookmarks": [
-		{"name": "TODO", "path": {"#multiconf#": [{"os:linux": "~/Desktop/Dropbox/TODO"}]} },
-		{"name": "Home", "path": {"#multiconf#": [{"os:linux": "~"}]} },
-		{"name": "Inbox", "path": {"#multiconf#": [{"os:linux": "~/Desktop/Inbox"}]} },
-		{"name": "Dropbox", "path": {"#multiconf#": [{"os:linux": "~/Desktop/Dropbox"}]} },
-		{"name": "Web", "path": {"#multiconf#": [{"os:linux": "~/Desktop/web"}]} }
-    ]
-}

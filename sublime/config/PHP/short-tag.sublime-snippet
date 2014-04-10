@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[<?= $1 ?>]]></content>
-	<description>PHP Short echo tag</description>
-	<tabTrigger>=</tabTrigger>
-</snippet>
