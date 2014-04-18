@@ -47,4 +47,3 @@ solarize_terminal() {
 }
 
 solarize_terminal dark
-set_system_conf "/org/pantheon/terminal/settings/font" "Source Code Pro for Powerline 10"

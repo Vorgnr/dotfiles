@@ -5,7 +5,7 @@
 set -e
 
 cd "$(dirname $0)"/..
-[ -n "$DOTFILES" ] && DOTFILES="`pwd`"
+[ -n "$DOTFILES" ] && $DOTFILES="`pwd`"
 
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do bash -c "${installer} < /dev/tty"; done

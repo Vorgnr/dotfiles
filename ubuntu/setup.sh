@@ -22,11 +22,7 @@ sudo apt-get install oracle-java7-installer
 
 # Install packages from repositories
 TO_INSTALL=(
-	'ack-grep'
 	'curl'
-	'dmenu'
-	'dconf-tools'
-	'grc'
 	'htop'
 	'vim'
 	'xclip'
@@ -40,12 +36,8 @@ TO_INSTALL=(
 	'gitk'
 	'git-flow'
 	'bash-completion'
-	'gcolor2'
 	'shutter'
-	'filezilla'
 	'meld'
-	'pandoc'
-	'poedit'
 	'kcachegrind'
 )
 INSTALL_COMMAND=$(printf " %s" "${TO_INSTALL[@]}")
@@ -70,12 +62,6 @@ do
 done
 sudo dpkg -i ${FETCH_DESTINATION_DIR}/*.deb
 rm ${FETCH_DESTINATION_DIR}/*.deb
-
-# Other installs
-## Hub: http://hub.github.com/
-mkdir -p $HOME/bin/
-curl http://hub.github.com/standalone -sLo $HOME/bin/hub
-chmod +x $HOME/bin/hub
 
 # Install Autocompletion:
 # 	http://mbuttu.wordpress.com/2011/07/11/git-autocomplete-for-bash-shells/

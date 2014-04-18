@@ -1,12 +1,3 @@
-[submodule "awesome/config/themes/awesome-solarized"]
-	path = awesome/config/themes/awesome-solarized
-	url = https://github.com/cycojesus/awesome-solarized.git
 [submodule "z/z"]
 	path = z/z
 	url = https://github.com/rupa/z.git
-[submodule "system/fonts.symlink/powerline-fonts"]
-	path = system/fonts.symlink/powerline-fonts
-	url = git@github.com:Lokaltog/powerline-fonts.git
-[submodule "awesome/config/precious"]
-	path = awesome/config/precious
-	url = git://rolinh.ch/precious.git
