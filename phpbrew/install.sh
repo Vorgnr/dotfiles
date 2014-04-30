@@ -64,9 +64,6 @@ install_phpbrew() {
     sudo mv phpbrew.bin /usr/bin/phpbrew > /dev/null
 
     /usr/bin/phpbrew init > /dev/null
-    /usr/bin/phpbrew lookup-prefix ubuntu
-    /usr/bin/phpbrew install-composer
-    /usr/bin/phpbrew install-phpunit
   fi
 }
 
