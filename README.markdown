@@ -1,4 +1,4 @@
-# Adrien needs dotfiles too
+# Arnaud needs dotfiles too
 
 ## dotfiles
 
