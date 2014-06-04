@@ -76,8 +76,8 @@ layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-  names = { "zsh", "web", "dev", "me", "sec" },
-  layout = { layouts[2], layouts[1], layouts[2], layouts[2], layouts[2] }
+  names = { "dev", "web", "sh", "doc", "misc" },
+  layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -387,6 +387,6 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.util.spawn_with_shell("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1")
+--awful.util.spawn_with_shell("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1")
 awful.util.spawn_with_shell("run_once nm-applet")
 awful.util.spawn_with_shell("run_once xscreensaver -nosplash")
