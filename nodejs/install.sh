@@ -36,3 +36,9 @@ then
   echo "  Installing Jasmine for you."
   sudo npm install -g jasmine-node
 fi
+
+if test ! $(which gulp)
+then
+  echo "  Installing gulp"
+  sudo npm install -g gulp
+fi
