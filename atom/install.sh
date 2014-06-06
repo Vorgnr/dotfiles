@@ -10,11 +10,26 @@ then
   sudo apt-get -y install atom
 
   packages=(
+    "script"
     "language-lua"
+    "cut-line"
+    "atom-monokai"
   )
 
-  for i in "${packages[@]}"
+  echo "  Installing packages ..."
+  for i in "${packages[@]}"i
   do
     apm install $i
+  done
+
+  echo "  Configuring atom for you"
+  dotfiles_root=`pwd`
+
+  for source in `find ${dotfiles_root}/atom/config -name \*.cson`
+  do
+    file_name=`basename ${source}`
+    dest=$HOME/.atom/${file_name}
+    ln -s $source $dest
+    echo "Linked $sourc to $dest"
   done
 fi
