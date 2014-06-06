@@ -2,6 +2,11 @@
 # See http://jonas.nitro.dk/tig/INSTALL.html
 
 install_tig() {
+  if [ -n "$DOTFILES"]
+  then
+    DOTFILES="`pwd`"
+  fi
+
   local SOURCES=$DOTFILES/tig/sources
 
   if test ! $(which tig)
@@ -16,5 +21,4 @@ install_tig() {
     make install prefix=~
   fi
 }
-
 install_tig
