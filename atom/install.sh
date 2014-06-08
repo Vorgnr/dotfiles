@@ -14,6 +14,7 @@ then
     "language-lua"
     "cut-line"
     "atom-monokai"
+    "merge-conflicts"
   )
 
   echo "  Installing packages ..."
