@@ -89,7 +89,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag({ "dev", "web", "sh", "doc", "misc" }, s, layouts[2])
 end
 -- }}}
 
@@ -278,7 +278,10 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+    -- User Binding
+    awful.key({ modkey }, "v", function() awful.util.spawn_with_shell("xscreensaver-command -l") end)
 )
 
 clientkeys = awful.util.table.join(
