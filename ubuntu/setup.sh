@@ -22,61 +22,18 @@ sudo apt-get install oracle-java7-installer
 
 # Install packages from repositories
 TO_INSTALL=(
-	'ack-grep'
 	'curl'
-	'dmenu'
-	'dconf-tools'
-	'grc'
-	'htop'
 	'vim'
 	'xclip'
 	'zsh'
 	'git'
 	'git-gui'
-	'gitk'
-	'git-flow'
 	'bash-completion'
-	'gcolor2'
-	'shutter'
-	'filezilla'
-	'meld'
-	'pandoc'
-	'poedit'
-	'kcachegrind'
+  'xscreensaver'
 )
+
 INSTALL_COMMAND=$(printf " %s" "${TO_INSTALL[@]}")
 INSTALL_COMMAND=${INSTALL_COMMAND:1}
 sudo apt-get -y install $INSTALL_COMMAND
-
-# Install DEB packages
-if test ! $(which google-chrome)
-then
-	TO_FETCH[1]='https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
-fi
-if test ! $(which subl)
-then
-	TO_FETCH[2]='http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3059_amd64.deb'
-fi
-
-mkdir -p ${FETCH_DESTINATION_DIR}
-rm ${FETCH_DESTINATION_DIR}/*.deb
-for DEB_URL in ${TO_FETCH[@]}
-do
-	wget ${DEB_URL} -P ${FETCH_DESTINATION_DIR}
-done
-sudo dpkg -i ${FETCH_DESTINATION_DIR}/*.deb
-rm ${FETCH_DESTINATION_DIR}/*.deb
-
-# Other installs
-## Hub: http://hub.github.com/
-mkdir -p $HOME/bin/
-curl http://hub.github.com/standalone -sLo $HOME/bin/hub
-chmod +x $HOME/bin/hub
-
-# Install Autocompletion:
-# 	http://mbuttu.wordpress.com/2011/07/11/git-autocomplete-for-bash-shells/
-# 	https://github.com/bobthecow/git-flow-completion
-sudo wget "https://raw.github.com/git/git/master/contrib/completion/git-completion.bash" -O /etc/bash_completion.d/git-completion.bash
-sudo wget "https://raw.github.com/bobthecow/git-flow-completion/master/git-flow-completion.bash" -O /etc/bash_completion.d/git-flow-completion.bash
 
 exit 0
