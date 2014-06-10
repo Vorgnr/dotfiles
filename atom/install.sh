@@ -15,6 +15,7 @@ then
     "cut-line"
     "atom-monokai"
     "merge-conflicts"
+    "atom-zeal"
   )
 
   echo "  Installing packages ..."
