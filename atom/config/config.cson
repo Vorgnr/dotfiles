@@ -5,9 +5,11 @@
 'metrics':
   'userId': '0b72d373e7b7f22bcfcf643965efd4cfebcfae77'
 'editor':
-  'fontSize': 16
+  'fontFamily': 'Monaco'
+  'showIndentGuide': true
 'core':
   'themes': [
     'atom-dark-ui'
     'atom-monokai'
   ]
+  'projectHome': '/home/arnaud/Workspace'
