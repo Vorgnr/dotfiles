@@ -11,7 +11,7 @@ then
   sudo apt-get -y install nodejs
 fi
 
-npm config set registry http://registry.npmjs.eu/
+npm config set registry http://registry.npmjs.org
 
 if test ! $(which grunt)
 then
