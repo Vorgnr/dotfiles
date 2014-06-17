@@ -13,4 +13,13 @@ then
     sudo rm /etc/mongod.conf
 fi
 
-sudo ln -s mongod.conf /etc/mongod.conf
+DOTFILES=`pwd`
+SOURCE="$DOTFILES/mongodb/mongodb.conf"
+DEST="/etc/mongodb.conf"
+sudo ln -s $SOURCE $DEST
+
+if test ! $(wich robomongo)
+then
+  sudo wget -P /tmp http://robomongo.org/files/linux/robomongo-0.8.3-x86_64.deb
+  sudo dpkg -i /tmp/robomongo-0.8.3-x86_64.deb
+fi
